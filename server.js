@@ -5,7 +5,7 @@ let projectData = {};
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-
+const opn = require('opn')
 // Start up an instance of app
 const app = express()
 
@@ -34,4 +34,5 @@ app.post('/sendData', (req, res) => {
 const port = 8000
 const server = app.listen( port , () => {
   console.log(`Server is running at http://localhost:${port}`)
+  opn(`http://localhost:${port}`)
 })
